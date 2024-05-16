@@ -1,0 +1,228 @@
+:root{
+    --color1:#350610;
+    --color2:#09456d;
+    --color3:rgb(154, 245, 7);
+    --color4:rgb(7,7,7);
+    --color5:rgb(92, 5, 5);
+}
+
+/*Estilos Generales*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.body {
+    font-family: sans-serif;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    border: 5px solid rgb(134, 10, 10);
+    align-items: center;
+}
+
+.contenedor {
+    padding-top: 50px;
+    border: 0px solid;
+    width: 90%;
+    max-width:  1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: row; /*solo una fila*/
+    flex-wrap: wrap;   /*lo que no quepa quede debajo*/
+    
+}
+
+/*Inicio header*/
+header{
+   width:100%;
+   background-color: rgb(92, 5, 5);
+   border-top-right-radius: 10px;
+   border-top-left-radius: 10px; 
+   padding: 10px;
+   /** flexbox **/
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+
+header .foto img{
+    width: 90px;
+    height:90px;
+    background-color: black;
+    border-radius: 50%;
+    vertical-align: bottom;
+}
+
+header .foto a{
+    color: #fff;
+    font-size: 30px;
+    font-family:'prompt' ,sans-serif;
+    text-decoration: none;
+    line-height: 80px;
+}
+
+
+header nav{
+    font-family: sans-serif;
+    width: 40%;
+    background-color: #07105fef;
+    display: flex;
+    flex-wrap: wrap;/*Hace que el bloque de menu abarque el 100% del ancho*/
+    align-items: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+ nav :hover{
+  background-color: var(--color2);/*hover cambio de color del boton*/
+}
+
+header nav a{
+color:#fff;
+text-decoration: none;
+text-align: center;
+padding: 8px;
+
+flex-grow: 1;
+}
+/*Final header*/
+
+/*Cominezo main*/
+
+.main {
+    background-color: #d1c8c8;
+    padding: 20px;
+    flex-grow: 1;
+    flex-basis: 70%;
+    flex-shrink: 1;
+}
+
+.main article{
+    margin-bottom: 20px;
+    padding-bottom: 20px; /*bottom es abajo*/
+    font-family: sans-serif;
+}
+/*Final Main*/
+
+/*Comienzo aside*/
+aside {
+    background-color: rgb(7, 7, 7);
+    padding: 20px;
+      /** flexbox **/
+   display: flex;
+   flex-direction: column; /*Los divs en columnas*/
+   justify-content: flex-start;
+   flex-wrap: wrap;
+   flex-grow: 1;/*Proporcion de cuanto crece el elemento*/
+   flex-shrink: 1;/*Proporcion de cuanto se encoge*/
+   flex-basis: 30%;/*Proporcion que debe ocupar*/
+}
+
+aside .widget{
+    height:90px;
+    margin: 10px;
+    background-color: var(--color3);
+    color: var(--color4);
+    font-family: sans-serif;
+     /** flexbox **/
+   display: flex;
+   justify-content: center;
+align-items: center;
+}
+/*Final Aside*/
+
+footer{
+    background-color: var(--color5);
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-items: center;
+}
+
+footer .links{
+    font-family: sans-serif;
+    background-color: #07105fef;
+    display: flex;
+    flex-wrap: wrap;/*Hace que el bloque de menu abarque el 100% del ancho*/
+
+    
+}
+footer .links a:hover{
+  background-color: var(--color2);/*hover cambio de color del boton*/
+}
+
+footer .links a{
+    color:#fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 8px;
+    display: flex;
+    
+    flex-grow: 1;
+    }
+
+footer .red{
+    font-family: sans-serif;
+    width: 30%;
+    background-color: #ec6d05ef;
+    display: flex;
+    flex-wrap: wrap;/*Hace que el bloque de menu abarque el 100% del ancho*/
+    display: flex;
+    
+    }
+footer .red a:hover{
+    background-color: rgb(153, 108, 24);/*hover cambio de color del boton*/
+    }
+    
+footer .red a{
+    color:#fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 8px;
+        
+    flex-grow: 1;
+    }
+
+@media screen and (max-width: 800px){
+    .contenedor{
+    flex-direction: column;
+    }
+    header{
+    flex-direction: column;
+    padding: 0;
+    }
+    header .foto{
+    margin: 20px 0;
+    }
+    header nav{
+    width: 100%;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+    }
+    aside{
+    flex-direction: row;
+    flex: 0;
+    }
+    aside .widget{
+    flex-grow: 1;
+    }
+}
+@media screen and (max-width: 600px){
+    aside{
+    flex-direction: column;
+    }
+
+    footer { 
+    justify-content: space-around;
+    }
+} 
+
